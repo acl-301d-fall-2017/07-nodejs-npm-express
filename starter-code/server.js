@@ -11,10 +11,10 @@ const PORT = 3000;
 
 // TODO: Include all of the static resources as an argument to app.use().
 
-app.use(express.static('./public'));
+app.use(express.static('./public')); //eslint-disable-line
 
 // COMMENT: Why are our files in a "public" directory now? How does ExpressJS serve files?
-// We are on the server side now so that we can make our files available for client requests. ExpressJS handles the requests from the clients and once it hears the request it runs the code that we provided. 
+// We are on the server side now so that we can make our files available for client requests. ExpressJS handles the requests from the clients and once it hears the request it runs the code that we provided.
 
 // TODO: Refactor to use arrow function
 app.post('/articles', bodyParser, (request, response) => {
