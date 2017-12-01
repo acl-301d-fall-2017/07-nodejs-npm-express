@@ -32,7 +32,8 @@ app.get('/', (request, response) => {
 });
 // TODO DONE: Write a new route, using an arrow function, that will handle any other routes that were not defined and deliver a 404 status message to the user
 app.get('*', (request, response) => {
-    response.send('File Not Found', 404);
+    console.log('What were you looking for?');
+    response.status('404').sendFile('.public/images/error_404.jpg', {root: '.'} );
 });
 // TODO DONE: Refactor this to arrow function, log to the console a message that lets you know which port your server has started on
 app.listen( PORT, () => {
