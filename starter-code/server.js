@@ -26,14 +26,14 @@ app.post('/articles', bodyParser, (request, response) => {
 });
 
 // TODO DONE: Write a new route, using an arrow function, that will handle a request and send the new.html file back to the user
-app.get('/', (request, response) => {
-    response.sendFile('/public/index.html', {root:'.'});
+app.get('/new', (request, response) => {
+    response.sendFile('/public/new.html', {root:'.'});
 });
 
 // TODO DONE: Write a new route, using an arrow function, that will handle any other routes that were not defined and deliver a 404 status message to the user
 
 app.get('*', (request, response) => {
-    response.status('404');
+    response.status('404').send({error:'Not found!'});
 });
 
 app.listen(PORT, () => {
