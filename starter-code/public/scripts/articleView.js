@@ -89,10 +89,9 @@ articleView.initNewArticlePage = () => {
 // COMMENT: When is this function called? What event ultimately triggers its execution?
 // This is called within the articleView.initNewArticlePage function. It is triggered by changes made in the text area element of the form. 
 articleView.create = () => {
-    let article;
     $('#articles').empty();
 
-    article = new Article({
+    const article = new Article({
         title: $('#article-title').val(),
         author: $('#article-author').val(),
         authorUrl: $('#article-author-url').val(),
