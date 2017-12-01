@@ -74,7 +74,7 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: When/where is this function invoked? What event ultimately triggers its execution? Explain the sequence of code execution when this function is invoked.
-// PUT YOUR RESPONSE HERE
+// This function is invoked on the new.html page.  The event that ultimately triggers its execution is when the event listeners "hear" a change, or input of text on the id new-form. 
 articleView.initNewArticlePage = () => {
     $('.tab-content').show();
     $('#export-field').hide();
@@ -87,12 +87,12 @@ articleView.initNewArticlePage = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// This function is called right here (?).  The event that triggers its execution is the event handler listening for a change or input (line 85). Then it creates the article view here (line 91) and on line 129 it's inserted into the record.
 articleView.create = () => {
     let article;
     $('#articles').empty();
 
-    article = new Article({
+const article = new Article({
         title: $('#article-title').val(),
         author: $('#article-author').val(),
         authorUrl: $('#article-author-url').val(),
@@ -112,7 +112,7 @@ articleView.create = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// This function is also being called right here (I think??), on line 116.  The event which ultimately triggers its execution is listening for the submit button being clicked (line 86). Then it submits the articleView (line 116) and inserts it into the record (line 129).
 articleView.submit = event => {
     event.preventDefault();
     const article = new Article({
@@ -125,7 +125,7 @@ articleView.submit = event => {
     });
 
     // COMMENT: Where is this function defined? When is this function called? What event ultimately triggers its execution?
-    // PUT YOUR RESPONSE HERE
+    // I think it is being defined on line 47 in article.js.  The function is called on line 129.  Ultimately, what triggers its execution is when a new article is entered into the submit form.
     article.insertRecord();
 };
 
