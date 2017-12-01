@@ -50,7 +50,7 @@ Article.prototype.insertRecord = function(callback) {
             console.log(data);
 
             // COMMENT: What is the purpose of this line? Is the callback invoked when this method is called? Why or why not?
-            // PUT YOUR RESPONSE HERE
+            // I am not sure if this is working but I did receive a console message when I submitted information from the form on new.html. The message is "Record posted to server". My guess is that there is no method for the callback(); on (callback)
             if (callback) callback();
         });
 };

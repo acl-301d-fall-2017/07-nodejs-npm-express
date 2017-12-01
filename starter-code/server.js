@@ -17,7 +17,7 @@ app.get('/', (request, response) => {
 });
 
 // COMMENT: Why are our files in a "public" directory now? How does ExpressJS serve files?
-// The files are in a "public" directory so that they can be accessed by the client. ExpressJS serves files through making a GET request to the specified path and responding with specified callback functions. 
+// The files are in a "public" directory so that they can be accessed by the client. ExpressJS serves files through making a GET request to the specified path and responding with the specified callback functions. 
 
 // TODO: Refactor to use arrow function
 app.post('/articles', bodyParser, (request, response) => {
@@ -33,7 +33,7 @@ app.get('/', (request, response) => {
 // TODO DONE: Write a new route, using an arrow function, that will handle any other routes that were not defined and deliver a 404 status message to the user
 app.get('*', (request, response) => {
     console.log('What were you looking for?');
-    response.status('404').sendFile('.public/images/error_404.jpg', {root: '.'} );
+    response.status('404').sendFile('./public/404.html', {root: '.'});
 });
 // TODO DONE: Refactor this to arrow function, log to the console a message that lets you know which port your server has started on
 app.listen( PORT, () => {
