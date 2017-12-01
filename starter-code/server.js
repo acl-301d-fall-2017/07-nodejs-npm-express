@@ -2,7 +2,7 @@
 
 // TODO DONE: Initialize your project using NPM to create and populate  package.json and package-lock.json files. Don't forget to add node_modules to your .gitignore!
 
-// TODO: Require the ExpressJS package that you installed via NPM, and instantiate the app.
+// TODO DONE: Require the ExpressJS package that you installed via NPM, and instantiate the app.
 const express = require('express');
 const app = express();
 // Remember to install ExpressJS, and be sure that it's been added to your package.json as a dependency.
@@ -28,11 +28,11 @@ app.post('/articles', bodyParser, (request, response) => {
 app.get('/new.html', (request, response) => {
     response.sendFile('/public/new.html',{root: '.'});
 });
-// TODO: Write a new route, using an arrow function, that will handle any other routes that were not defined and deliver a 404 status message to the user
+// TODO DONE: Write a new route, using an arrow function, that will handle any other routes that were not defined and deliver a 404 status message to the user
 app.get('*',(request,response) => {
     response.status('404');
 });
 app.listen(PORT, () => {
-    // TODO: Refactor this to arrow function, log to the console a message that lets you know which port your server has started on
+    // TODO DONE: Refactor this to arrow function, log to the console a message that lets you know which port your server has started on
     console.log(`Port I'm using is ${PORT}` );
 });
