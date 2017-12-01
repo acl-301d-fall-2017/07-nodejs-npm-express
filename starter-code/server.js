@@ -16,7 +16,7 @@ const PORT = 3000;
 app.use(express.static('./public'));
 
 // COMMENT: Why are our files in a "public" directory now? How does ExpressJS serve files?
-// The files within the public directory are the files that can be accessed by the client. ExpressJS accesses these files with the app.use() command, then serves them with different route declarations. 
+// The files within the public directory are the files that can be accessed by the client. ExpressJS accesses these files with the app.use() command, then serves them with different route declarations.
 
 // TODO DONE: Refactor to use arrow function
 app.post('/articles', bodyParser, (request, response) => {
