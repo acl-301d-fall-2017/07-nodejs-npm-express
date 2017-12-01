@@ -12,13 +12,14 @@ const bodyParser = require('body-parser').urlencoded({extended: true});
 const PORT = 3000;
 
 // TODO: Include all of the static resources as an argument to app.use().
+// COMMENT: Why are our files in a "public" directory now? How does ExpressJS serve files?
+// We put the files in a 'public' directory because there are other files which we do not want the client to have access to, which we want only to exist on the server. ExpressJS serves files using requests and responses (.get, and sendFile).
+
 app.use(express.static('./public'));
 
 app.get('/', (request, response) => {
     response.sendFile('/index.html', {root: '.'});
 });
-// COMMENT: Why are our files in a "public" directory now? How does ExpressJS serve files?
-// We put the files in a 'public' directory because there are other files which we do not want the client to have access to, which we want only to exist on the server. ExpressJS serves files using requests and responses (.get, and sendFile).
 
 // TODO: Refactor to use arrow function
 app.post('/articles', bodyParser, (request, response) => {
@@ -29,18 +30,18 @@ app.post('/articles', bodyParser, (request, response) => {
 
 // TODO: Write a new route, using an arrow function, that will handle a request and send the new.html file back to the user
 app.get('/new', (request, response) => {
-    response.sendFile('/new.html', {root: '.'});
+    response.sendFile('/new.html', {root: './scripts'});
 });
 
 // TODO: Write a new route, using an arrow function, that will handle any other routes that were not defined and deliver a 404 status message to the user
-app.get( '*', function ( request, response ) {
-    response.status('404').sendFile( '/public/404.html', { root: '.' } );
+app.get( '*', ( request, response ) => {
+    response.status('404').sendFile( '/public/404.jpeg', { root: '.' } );
 });
 
 
 
 // TODO: Refactor this to arrow function, log to the console a message that lets you know which port your server has started on
 app.listen(PORT, () => {
-    console.log(`Server has started on port ${PORT}`)
+    console.log(`Server has started on port ${PORT}`);
 
 });
