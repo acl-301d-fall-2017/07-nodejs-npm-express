@@ -32,15 +32,15 @@ app.post('/articles', bodyParser, function(request, response) {
 });
 
 // TODO: Write a new route, using an arrow function, that will handle a request and send the new.html file back to the user
-app.get('/', (request, response) => {
+app.get('/new', (request, response) => {
     // console.log('REQUEST LOOKS LIKE:', request);
-    response.sendFile('/public/.html', {root: '.'});
+    response.sendFile('/public/new.html', {root: '.'});
 });
 
 // Wrote a new route, using an arrow function, that will handle any other routes that were not defined and deliver a 404 status message to the user
 app.get( '*', function ( request, response ) {
     console.log( 'they made a request to something??' );
-    response.status('404').sendFile( '/public/404.html', { root: '.' } );
+    response.status('404').send( 'not found');
 });
 
 
