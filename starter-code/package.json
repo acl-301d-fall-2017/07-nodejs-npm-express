@@ -1,0 +1,24 @@
+{
+  "name": "lab07",
+  "version": "1.0.0",
+  "description": "lab07",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heicj/07-nodejs-npm-express.git"
+  },
+  "author": "heicj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heicj/07-nodejs-npm-express/issues"
+  },
+  "homepage": "https://github.com/heicj/07-nodejs-npm-express#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "nodemon": "^1.12.1"
+  }
+}
