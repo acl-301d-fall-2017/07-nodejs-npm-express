@@ -74,7 +74,7 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: When/where is this function invoked? What event ultimately triggers its execution? Explain the sequence of code execution when this function is invoked.
-// PUT YOUR RESPONSE HERE
+// This is called from new.html. This function is executed when then DOM completes loading, and after all other scripts have run in new.html. When this function is invoked, it shows the element with a class of .tab-content, then hides the element with an id of export-field. It sets an event listener so that when the element with an id of article-json is focused within the browser, it will become selected. It sets another event listener on #new-form that with any change within elements that are input or textarea, articleView.create is called. It sets another event listener on #new-form for submission, and calls articleView.submit.
 articleView.initNewArticlePage = () => {
   $('.tab-content').show();
   $('#export-field').hide();
@@ -87,7 +87,7 @@ articleView.initNewArticlePage = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// This function is called with any change within input fields or textareas of #new-form.
 articleView.create = () => {
   let article;
   $('#articles').empty();
@@ -112,7 +112,7 @@ articleView.create = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// This function is called when #new-form is submitted.
 articleView.submit = event => {
   event.preventDefault();
   let article = new Article({
@@ -125,7 +125,7 @@ articleView.submit = event => {
   });
 
   // COMMENT: Where is this function defined? When is this function called? What event ultimately triggers its execution?
-  // PUT YOUR RESPONSE HERE
+  // This function is defined within article.js. This function is called each time a new article is submitted from #new-article form.
   article.insertRecord();
 }
 

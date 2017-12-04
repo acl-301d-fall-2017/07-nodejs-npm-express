@@ -1,0 +1,17 @@
+{
+  "name": "starter-code",
+  "version": "1.0.0",
+  "description": "**Author**: Alchemy Code Lab 301 Day Class - Fall 2017",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "@grace",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "nodemon": "^1.12.1"
+  }
+}
