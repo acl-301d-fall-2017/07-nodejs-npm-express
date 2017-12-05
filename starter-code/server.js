@@ -15,7 +15,7 @@ const PORT = 3000;
 
 app.use(express.static('./public'));
 
-// COMMENT: Why are our files in a "public" directory now? How does ExpressJS serve files?
+// COMMENT DONE: Why are our files in a "public" directory now? How does ExpressJS serve files?
 // PUT YOUR RESPONSE HERE    We are now on the server side of the WRRC cycle so we add files into a 'public' directory that we want to make available to send to client requests.  We then make that folder availabe to use with the app.use line below.  ExpressJS serves files by handling requests from the client. It is similar to an event handler we would use on the front end, but in this case it listens for a certain request. Once it 'hears' that request it runs the code we want. 
 // TODO DONE: Refactor to use arrow function
 app.post('/articles', bodyParser, (request, response) => {
