@@ -50,7 +50,7 @@ Article.prototype.insertRecord = function(callback) {
             console.log(data);
 
             // COMMENT: What is the purpose of this line? Is the callback invoked when this method is called? Why or why not?
-            // This is a function called "callback" that has the method post (articles data) and then console log that data. I am not sure if this is working. Can the if statement have a callback function on the function called callback? Very confusing!  
+            // This is a function called "callback" that invokes the method  to insert a new record IF it is called.
             if (callback) callback();
         });
 };

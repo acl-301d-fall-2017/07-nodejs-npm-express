@@ -74,7 +74,8 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: When/where is this function invoked? What event ultimately triggers its execution? Explain the sequence of code execution when this function is invoked.
-// PUT YOUR RESPONSE HERE
+// This function is invoked on new.html when someone begins entering data into the form. This initializes, or begins, the process of adding a new article to the blog. The code executes through showing the area in which the form resides ('.tab-content'), hiding the export-field area (the submit?) and this.select() is a method of the on focus event. When inputs have been added to the form, the articleView.create is invoked, and then submitted when the submit button is clicked.
+
 articleView.initNewArticlePage = () => {
     $('.tab-content').show();
     $('#export-field').hide();
@@ -87,7 +88,7 @@ articleView.initNewArticlePage = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// This function is called in the articleView.initNewArticlePage function. This is triggered upon submit (of the form).
 articleView.create = () => {
     let article;
     $('#articles').empty();
@@ -112,7 +113,7 @@ articleView.create = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// This function is called in the articleView.initNewArticlePage. The event that triggers its execution is the event "submit" (pressing the submit button).
 articleView.submit = event => {
     event.preventDefault();
     let article = new Article({
@@ -125,7 +126,7 @@ articleView.submit = event => {
     });
 
     // COMMENT: Where is this function defined? When is this function called? What event ultimately triggers its execution?
-    // PUT YOUR RESPONSE HERE
+    // This is defined in article.js: Article.prototype.insertRecord(); . This is triggered by the submit button, which exports the data to the server and hence, to the database.
     article.insertRecord();
 };
 
