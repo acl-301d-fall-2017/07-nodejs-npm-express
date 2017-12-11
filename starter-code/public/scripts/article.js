@@ -49,8 +49,8 @@ Article.prototype.insertRecord = function(callback) {
     .then(data => {
         console.log(data);
 
-      // COMMENT: What is the purpose of this line? Is the callback invoked when this method is called? Why or why not?
-      // PUT YOUR RESPONSE HERE
+      // [X]COMMENT: What is the purpose of this line? Is the callback invoked when this method is called? Why or why not?
+      // The purpose is to call the callback function if it exists.
         if (callback) callback();
     });
 };
